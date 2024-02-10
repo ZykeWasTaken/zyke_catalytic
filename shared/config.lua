@@ -6,18 +6,17 @@ Config.Settings = {
     keyToStart = "LEFTMOUSE", -- Press this inside of the polyzone
     drawPolyzone = true, -- true/false, draws a polyzone where you can start stealing
     miniGame = {
-        totalClicks = 1,
-        -- totalClicks = 1,
-        timePerKey = 10.2,
+        totalClicks = 15,
+        timePerKey = 1.8,
         scrambleKeys = true, -- Scramble key order each time you click a key
         cancelKey = "X",
         keys = {
-            -- {key = "Q", keyCode = 44},
-            -- {key = "W", keyCode = 32},
+            {key = "Q", keyCode = 44},
+            {key = "W", keyCode = 32},
             {key = "E", keyCode = 38},
-            -- {key = "A", keyCode = 34},
-            -- {key = "S", keyCode = 8},
-            -- {key = "D", keyCode = 9},
+            {key = "A", keyCode = 34},
+            {key = "S", keyCode = 8},
+            {key = "D", keyCode = 9},
         },
     },
     alert = {
