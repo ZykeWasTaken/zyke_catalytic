@@ -131,6 +131,30 @@ Config.Settings = {
                 model = "surano",
                 img = "https://cdn.discordapp.com/attachments/930979289011195924/1205022653052882954/surano.png?ex=65d6dbcc&is=65c466cc&hm=fb9a926efaae821a0e78eb3cf9f74c5fa04f8ddef1c250e8d773db9327252177&",
             },
+            {
+                model = "radi",
+                img = "https://cdn.discordapp.com/attachments/930979289011195924/1206044520681312307/radi.png?ex=65da937c&is=65c81e7c&hm=15ef7a2ef2198e84986bb05e2871e744972c19c22b79a9e73021f4c81ebe165f&",
+            },
+            {
+                model = "minivan",
+                img = "https://cdn.discordapp.com/attachments/930979289011195924/1206045569496383518/minivan.png?ex=65da9477&is=65c81f77&hm=33c759b91d3ebc63ea037a2eb58de141fab2edc631f785a1a42c8b21ac8eef6e&"
+            },
+            {
+                model = "granger",
+                img = "https://cdn.discordapp.com/attachments/930979289011195924/1206045796932255764/granger.png?ex=65da94ad&is=65c81fad&hm=2592dc66b2e126a4df5a8b783216a25342d4ca7e7d145852fe36260dd8381e7e&",
+            },
+            {
+                model = "stratum",
+                img = "https://cdn.discordapp.com/attachments/930979289011195924/1206046002855936100/stratum.png?ex=65da94de&is=65c81fde&hm=18cbe217533b76ef69cbee57fb95d6e58a462e721c71e8288f1039295d8caea8&",
+            },
+            {
+                model = "bjxl",
+                img = "https://cdn.discordapp.com/attachments/930979289011195924/1206046243252600883/bjxl.png?ex=65da9517&is=65c82017&hm=5211a0a8fa4a7bb80ca754725b89bc463ede3a8ab1a1921ab245534a96bd9edf&",
+            },
+            {
+                model = "bfinjection",
+                img = "https://cdn.discordapp.com/attachments/930979289011195924/1206046604390563861/bfinjection.png?ex=65da956d&is=65c8206d&hm=557796e54a5a0a4e47ba847f0fbb41965507876c1b56e4b619100bdeb1fb94e3&",
+            }
         }
     }
 }
