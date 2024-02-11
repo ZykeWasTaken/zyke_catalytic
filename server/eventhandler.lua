@@ -119,8 +119,9 @@ RegisterNetEvent("zyke_catalytic:Repair", function(netId)
     local vehicle = NetworkGetEntityFromNetworkId(netId)
     if (not vehicle) then return end
 
+    local ply = GetPlayerPed(source)
     local vehiclePos = GetEntityCoords(vehicle)
-    local plyPos = GetEntityCoords(PlayerPedId())
+    local plyPos = GetEntityCoords(ply)
     local dst = #(vehiclePos - plyPos)
     if (dst > 5) then return end
 
