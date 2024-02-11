@@ -11,14 +11,7 @@ Config.Settings = {
         timePerKey = 1.8,
         scrambleKeys = true, -- Scramble key order each time you click a key
         cancelKey = "X",
-        keys = {
-            {key = "Q", keyCode = 44},
-            {key = "W", keyCode = 32},
-            {key = "E", keyCode = 38},
-            {key = "A", keyCode = 34},
-            {key = "S", keyCode = 8},
-            {key = "D", keyCode = 9},
-        },
+        keys = {"Q", "W", "E", "A", "S", "D"},
     },
     alert = {
         jobs = {"police", "police2"},

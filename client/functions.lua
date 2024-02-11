@@ -188,17 +188,17 @@ function Minigame(vehHandler, displayPos, item)
 
         if (#availableKeys > 1) then
             repeat
-                randKey = availableKeys[math.random(1, #availableKeys)].key
+                randKey = availableKeys[math.random(1, #availableKeys)]
             until (randKey ~= keyToClick)
         else
             -- If you for some reason only have one key, probably for testing
-            randKey = availableKeys[1].key
+            randKey = availableKeys[1]
         end
 
         for _, keyData in pairs(availableKeys) do
-            local isRandKey = keyData.key == randKey
+            local isRandKey = keyData == randKey
             local color = isRandKey and "~r~" or "~w~"
-            str = str .. color .. keyData.key .. "~s~"
+            str = str .. color .. keyData .. "~s~"
         end
 
         return str, randKey
@@ -235,9 +235,9 @@ function Minigame(vehHandler, displayPos, item)
         local timeLeft = timePerKey - timeSinceLastPressed
 
         for index, keyData in pairs(availableKeys) do
-            DisableControlAction(0, keyData.keyCode, true)
-            if (IsDisabledControlJustPressed(0, keyData.keyCode)) then
-                local state = handleClick(keyData.key)
+            DisableControlAction(0, Keys[keyData].keyCode, true)
+            if (IsDisabledControlJustPressed(0, Keys[keyData].keyCode)) then
+                local state = handleClick(keyData)
                 if (not state) then return false, "failedMinigame" end
             end
         end
