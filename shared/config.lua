@@ -5,6 +5,7 @@ Config.Settings = {
     vehicleSound = "TORNADO6", -- Vehicle sound when your catalytic converter has beeen stolen
     keyToStart = "LEFTMOUSE", -- Press this inside of the polyzone
     drawPolyzone = true, -- true/false, draws a polyzone where you can start stealing
+    repairJobs = {"mechanic", "mechanic2"}, -- List of jobs that are allowed to repair vehicles
     miniGame = {
         totalClicks = 15,
         timePerKey = 1.8,

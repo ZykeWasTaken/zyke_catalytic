@@ -103,6 +103,19 @@ end)
 -- https://docs.fivem.net/natives/?_0xA11700682F3AD45C
 ---@param netId number
 RegisterNetEvent("zyke_catalytic:Repair", function(netId)
+    if (#Config.Settings.repairJobs > 0) then
+        local plyJob = Z.GetJob(source)
+        local hasJob = false
+        for _, jobName in pairs(Config.Settings.repairJobs) do
+            if (plyJob.name == jobName) then
+                hasJob = true
+                break
+            end
+        end
+
+        if (not hasJob) then return end
+    end
+
     local vehicle = NetworkGetEntityFromNetworkId(netId)
     if (not vehicle) then return end
 
