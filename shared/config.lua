@@ -72,7 +72,7 @@ Config.Settings = {
         enabled = true,
         name = "Robert",
         model = "mp_m_waremech_01",
-        pos = vec4(-1151.4918212891, -1992.7900390625, 13.160345077515, 47.0944480896),
+        pos = vec4(-1151.49, -1992.79, 13.16, 47.09),
         anim = {dict = "WORLD_HUMAN_LEANING", name = ""}, -- Leave name as an empty string or nil to run a scenario
         dealTime = 10, -- Time in seconds to wait for the deal to be completed
         playerAnim = {dict = "misscarsteal3", name = "racer_argue_01_a"}, -- Same as anim above, but plays for your ped when you are negotiating
