@@ -2,22 +2,22 @@ Config = Config or {}
 
 Config.Settings = {
     language = "en",
-    vehicleSound = "TORNADO6", -- Vehicle sound when your catalytic converter has beeen stolen
-    keyToStart = "LEFTMOUSE", -- Press this inside of the polyzone
-    drawPolyzone = true, -- true/false, draws a polyzone where you can start stealing
-    repairJobs = {"mechanic", "mechanic2"}, -- List of jobs that are allowed to repair vehicles
+    vehicleSound = "TORNADO6",
+    keyToStart = "LEFTMOUSE",
+    drawPolyzone = true,
+    repairJobs = {"mechanic", "mechanic2"},
     miniGame = {
         totalClicks = 15,
         timePerKey = 1.8,
-        scrambleKeys = true, -- Scramble key order each time you click a key
+        scrambleKeys = true,
         cancelKey = "X",
         keys = {"Q", "W", "E", "A", "S", "D"},
     },
     alert = {
         jobs = {"police", "police2"},
-        alertChance = 30, -- Chance in percentage, set to 0 to disable
-        vehicleAlarm = true, -- true/false, enables the vehicle alarm when you start stealing
-        blipTime = 60, -- Time in seconds for the blip to be visible
+        alertChance = 30,
+        vehicleAlarm = true,
+        blipTime = 60, -- s
     },
     grinderItems = {
         ["angle_grinder"] = {
@@ -28,14 +28,13 @@ Config.Settings = {
             rotation = {x = 25.0, y = 0.0, z = 0.0},
         },
         ["advanced_angle_grinder"] = {
-            timeMultiplier = 1.2, -- 20% more time
-            totalClicksMultiplier = 0.8, -- 20% less clicks
+            timeMultiplier = 1.2,
+            totalClicksMultiplier = 0.8,
             model = "xm3_prop_xm3_grinder_02a",
             offsets = {x = 0.12, y = 0.09, z = -0.02},
             rotation = {x = 25.0, y = 0.0, z = 0.0},
         },
     },
-    -- List of items that you can sell to the buyer, you can add any item in here that exists on your server
     availableToSell = {
         {name ="small_catalytic_converter", price = 230},
         {name ="medium_catalytic_converter", price = 260},
@@ -43,7 +42,6 @@ Config.Settings = {
         {name ="gigantic_catalytic_converter", price = 350},
     },
     itemsForVehicleTypes = {
-        -- Set to "none" to disable stealing for that vehicle class
         "small_catalytic_converter", -- Compacts
         "medium_catalytic_converter", -- Sedans
         "medium_catalytic_converter", -- SUVs
@@ -73,9 +71,9 @@ Config.Settings = {
         name = "Robert",
         model = "mp_m_waremech_01",
         pos = vec4(-1151.49, -1992.79, 13.16, 47.09),
-        anim = {dict = "WORLD_HUMAN_LEANING", name = ""}, -- Leave name as an empty string or nil to run a scenario
-        dealTime = 10, -- Time in seconds to wait for the deal to be completed
-        playerAnim = {dict = "misscarsteal3", name = "racer_argue_01_a"}, -- Same as anim above, but plays for your ped when you are negotiating
+        anim = {dict = "WORLD_HUMAN_LEANING", name = nil},
+        dealTime = 10, -- s
+        playerAnim = {dict = "misscarsteal3", name = "racer_argue_01_a"},
         talkKey = "E", -- Only used if you don't have a target menu
         blip = {
             enabled = true,
@@ -85,15 +83,13 @@ Config.Settings = {
         }
     },
     intervals = {
-        -- A list of extra intervals, made for easy configuration
-        -- In seconds
         findingCatalytic = 10,
         finishMinigameProgressBar = 10,
     },
     desiredParts = {
         deals = 4,
-        timeBetween = 3600, -- In seconds
-        priceMultiplier = {2.0, 5.0}, -- Random value between these two for each deal
+        timeBetween = 3600, -- s
+        priceMultiplier = {2.0, 5.0},
         vehicles = {
             -- All vehicles in this list can spawn around the city
             {
