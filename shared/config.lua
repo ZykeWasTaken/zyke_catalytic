@@ -18,6 +18,7 @@ Config.Settings = {
         alertChance = 30,
         vehicleAlarm = true,
         blipTime = 60, -- s
+        delay = {min = 15, max = 45}, -- s
     },
     grinderItems = {
         ["angle_grinder"] = {
