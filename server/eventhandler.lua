@@ -135,6 +135,9 @@ RegisterNetEvent("zyke_catalytic:Repair", function(netId)
 end)
 
 RegisterNetEvent("zyke_catalytic:AlertPolice", function(netId, plate, model)
+    local timeToWait = math.random(Config.Settings.alert.delay.min, Config.Settings.alert.delay.max) * 1000
+    Wait(timeToWait)
+
     local vehicle = NetworkGetEntityFromNetworkId(netId)
     if (not vehicle) then return end
 
