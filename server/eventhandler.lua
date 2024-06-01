@@ -144,7 +144,7 @@ RegisterNetEvent("zyke_catalytic:AlertPolice", function(netId, plate, model)
 
     local vehiclePos = GetEntityCoords(vehicle)
 
-    local playersOnJob = Z.GetPlayersOnJob(Config.Settings.alert.jobs)
+    local playersOnJob = Z.GetPlayersOnJob(Config.Settings.alert.jobs, true)
     if (#playersOnJob <= 0) then return end
 
     for _, playerId in pairs(playersOnJob) do
