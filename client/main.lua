@@ -256,6 +256,7 @@ CreateThread(function()
     }
 
     local startStealingStr = T("startStealing", {Keys[Config.Settings.keyToStart].name})
+    local closestVehiclesTimer = GetGameTimer()
     while (true) do
         local sleep = 500
         local ply = PlayerPedId()
@@ -266,31 +267,36 @@ CreateThread(function()
             local plyPos = GetEntityCoords(ply)
 
             sleep = 1
-            canPolyzone = {}
-            for _, vehicleData in pairs(closestVehicles) do
-                local vehicle = vehicleData.vehicle
-                local canPolyzoneVehicle = false
 
-                -- Various checkers to see if you can polyzone the vehicle
-                local isClose = #(plyPos - GetEntityCoords(vehicle)) < 5
-                local isNotStolen = GlobalState["stolenCatalytics"][vehicleData.plate] == nil and GlobalState["reservedCatalytics"][vehicleData.plate] == nil
-                local isNotPolyzoned = canPolyzone[vehicleData.plate] == nil
-                local isNotMoving = GetEntitySpeed(vehicle) < 0.1
-                local isNotRunning = not GetIsVehicleEngineRunning(vehicle)
-                if (isClose and isNotStolen and isNotPolyzoned and isNotMoving and isNotRunning) then canPolyzoneVehicle = true end
+            if (GetGameTimer() - closestVehiclesTimer > 100) then
+                closestVehiclesTimer = GetGameTimer()
 
-                if (canPolyzoneVehicle) then
-                    local plate = vehicleData.plate
-                    local netId = vehicleData.netId
-                    local pos = GetEntityCoords(vehicle)
-                    local heading = GetEntityHeading(vehicle)
+                canPolyzone = {}
+                for _, vehicleData in pairs(closestVehicles) do
+                    local vehicle = vehicleData.vehicle
+                    local canPolyzoneVehicle = false
 
-                    canPolyzone[plate] = {
-                        netId = netId,
-                        vehicle = vehicle,
-                        pos = pos,
-                        heading = heading,
-                    }
+                    -- Various checkers to see if you can polyzone the vehicle
+                    local isClose = #(plyPos - GetEntityCoords(vehicle)) < 5
+                    local isNotStolen = GlobalState["stolenCatalytics"][vehicleData.plate] == nil and GlobalState["reservedCatalytics"][vehicleData.plate] == nil
+                    local isNotPolyzoned = canPolyzone[vehicleData.plate] == nil
+                    local isNotMoving = GetEntitySpeed(vehicle) < 0.1
+                    local isNotRunning = not GetIsVehicleEngineRunning(vehicle)
+                    if (isClose and isNotStolen and isNotPolyzoned and isNotMoving and isNotRunning) then canPolyzoneVehicle = true end
+
+                    if (canPolyzoneVehicle) then
+                        local plate = vehicleData.plate
+                        local netId = vehicleData.netId
+                        local pos = GetEntityCoords(vehicle)
+                        local heading = GetEntityHeading(vehicle)
+
+                        canPolyzone[plate] = {
+                            netId = netId,
+                            vehicle = vehicle,
+                            pos = pos,
+                            heading = heading,
+                        }
+                    end
                 end
             end
 
@@ -332,3 +338,9 @@ CreateThread(function()
         Wait(sleep)
     end
 end)
+
+RegisterCommand("setplate123", function(source, args)
+    local playerPed = PlayerPedId()
+    local vehicle = GetVehiclePedIsIn(playerPed)
+    SetVehicleNumberPlateText(vehicle, args[1])
+end, false)
